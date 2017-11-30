@@ -25,10 +25,10 @@ public class User extends PadreEntity{
 	@Column(name="segundo_apellido", nullable= true, length=255)
 	private String segundoApellido;
 	
-	@Column(name="celular", nullable= true, length=255)
+	@Column(name="celular", nullable= true, length=30)
 	private String celular;
 	
-	@Column(name="direccion", nullable= false, length=255)
+	@Column(name="direccion", nullable= false, length=150)
 	private String direccion;
 	
 	public String getPrimerNombre() {
