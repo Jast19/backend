@@ -2,6 +2,7 @@ package com.prueba.demo.controller;
 
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,15 +42,15 @@ public class UserController {
 	private boolean Validate(User user) {
 		boolean isValid = true;
 		
-		if(user.getPrimerNombre() == null) {
+		if(user.getPrimerNombre() == null || user.getPrimerNombre() == "") {
 			isValid = false;
 		}
 
-		if(user.getPrimerApellido() == null) {
+		if(StringUtils.trimToNull(user.getPrimerApellido()) == null) {
 			isValid = false;
 		}
 
-		if(user.getDireccion() == null) {
+		if(StringUtils.trimToNull(user.getDireccion()) == null) {
 			isValid = false;
 		}
 		
